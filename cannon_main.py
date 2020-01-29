@@ -16,9 +16,9 @@ canv = tk.Canvas(root, bg='white')
 canv.pack(fill=tk.BOTH, expand=1)
 
 
-class ball():
+class Ball():
     def __init__(self, x=40, y=450):
-        """ Конструктор класса ball
+        """ Конструктор класса Ball
 
         Args:
         x - начальное положение мяча по горизонтали
@@ -68,6 +68,7 @@ class ball():
             Возвращает True в случае столкновения мяча и цели. В противном случае возвращает False.
         """
         # FIXME
+        else:
             return False
 
 
@@ -88,7 +89,7 @@ class gun():
         """
         global balls, bullet
         bullet += 1
-        new_ball = ball()
+        new_ball = Ball()
         new_ball.r += 5
         self.an = math.atan((event.y-new_ball.y) / (event.x-new_ball.x))
         new_ball.vx = self.f2_power * math.cos(self.an)
